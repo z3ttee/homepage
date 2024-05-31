@@ -1,0 +1,23 @@
+---
+---
+
+<div class="absolute left-0 top-0 w-[50vw] h-[50vh] overflow-hidden z-0">
+    <div class="square-pattern"></div>
+</div>
+
+<style>
+    .square-pattern {
+        --pattern-thickness: 1px;
+        --pattern-square-size: 30px;
+
+        height: 100%;
+        width: 100%;
+
+        opacity: 0.2;
+        background-image: 
+            linear-gradient(#000 var(--pattern-thickness), transparent var(--pattern-thickness)), 
+            linear-gradient(to right, #000 var(--pattern-thickness), transparent var(--pattern-thickness));
+        background-size: var(--pattern-square-size) var(--pattern-square-size);
+    }
+  </style>
+  
