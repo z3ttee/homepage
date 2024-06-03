@@ -20,11 +20,9 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="w-full h-full bg-body">
-    <!-- <Pattern /> -->
-
+  <body class="relative w-full h-full bg-body">
     <Header />
-    <div class="w-full p-window">
+    <div class="w-full px-window">
       <slot />
     </div>
   </body>
