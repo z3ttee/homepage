@@ -1,48 +1,53 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import { Icon } from 'astro-icon/components';
+import SocialItem from "../components/social-item/SocialItem.astro";
+import Layout from "../layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
+
+const PAGE_TITLE = "Hi, I'm Cedric Zitzmann";
 ---
 
+<Layout title={PAGE_TITLE}>
+  <div class="grid grid-cols-[2fr,1fr] w-full">
+    <div class="w-full border">
+      <h1 class="text-7xl font-black">Cedric Zitzmann</h1>
+      <p class="text-lg mt-2 px-2">Full-Stack Software Engineer</p>
 
-<Layout title="Welcome to Astro.">
-	
-	<div class="w-full">
-		<h1 class="text-7xl font-black">Cedric Zitzmann</h1>
-		<p class="text-lg mt-2 px-2">Full-Stack Software Engineer</p>
-
-		<ul class="flex items-center justify-start mt-20 gap-6 px-1 opacity-80">
-			<li class="inline-flex items-center gap-1"><Icon size={28} name="ph:linkedin-logo" /><span class="text-sm">/cedric-zitzmann</span></li>
-			<li class="inline-flex items-center gap-1"><Icon size={28} name="ph:github-logo" /><span class="text-sm">/z3ttee</span></li>
-		</ul>
-	</div>
-
-	<div class="grid grid-cols-2 w-full">
-		<div class="w-full"></div>
-		<div class="w-full"></div>
-	</div>
-
+      <ul class="flex items-center justify-start mt-20 gap-6 px-1 opacity-80">
+        <SocialItem href="https://www.linkedin.com/in/cedric-zitzmann">
+          <Icon size={28} name="ph:linkedin-logo" />
+          <span class="text-sm">/cedric-zitzmann</span>
+        </SocialItem>
+        <SocialItem href="https://github.com/z3ttee">
+          <Icon size={28} name="ph:github-logo" />
+          <span class="text-sm">/z3ttee</span>
+        </SocialItem>
+      </ul>
+    </div>
+    <div class="w-full"></div>
+  </div>
 </Layout>
 
 <style lang="scss" is:global>
-	@font-face {
-		font-family: 'Noto Serif';
-		src: url('/fonts/noto_serif/noto_serif.ttf') format('truetype');
-		font-optical-sizing: auto;
-		font-weight: 100 900;
-		font-style: normal;
-		font-variation-settings: 'wdth' 100;
-		font-display: swap;
-	}
+  @font-face {
+    font-family: "Noto Serif";
+    src: url("/fonts/noto_serif/noto_serif.ttf") format("truetype");
+    font-optical-sizing: auto;
+    font-weight: 100 900;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    font-display: swap;
+  }
 
-	* {
-		font-family: 'Noto Serif', serif;
-		font-weight: 500;
-		box-sizing: border-box;
-		@apply text-body-on;
-	}
+  * {
+    font-family: "Noto Serif", serif;
+    font-weight: 500;
+    box-sizing: border-box;
+  }
 
-	html, body {
-		width: 100%;
-		height: 100%;
-	}
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+    @apply text-body-on;
+  }
 </style>

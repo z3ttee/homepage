@@ -1,0 +1,11 @@
+{
+  "svg.preview.background": "editor",
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "eslint.experimental.useFlatConfig": false,
+  "[typescript]": {
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "always"
+    }
+  }
+}
