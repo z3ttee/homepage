@@ -16,6 +16,7 @@
     "@iconify-json/ph": "^1.1.13",
     "astro": "^4.9.2",
     "astro-icon": "^1.1.0",
+    "astro-page-insight": "^0.8.3",
     "nanostores": "^0.10.3",
     "sass": "^1.77.4"
   },

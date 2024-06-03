@@ -1,6 +1,7 @@
 ---
 import { Icon } from "astro-icon/components";
 import Container from "../container/Container.astro";
+import NavButton from "../nav-button/NavButton.astro";
 ---
 
 <div class="relative lg:fixed top-0 left-0 right-0 bg-body z-50">
@@ -8,43 +9,50 @@ import Container from "../container/Container.astro";
     <div class="grid grid-cols-3 items-center justify-start w-full h-14 px-window py-window-sm">
       <div class="block">
         <!-- Logo for desktop -->
-        <a href="/" class="hidden lg:inline-flex items-center justify-start gap-2">
+        <NavButton variant="text" href="/" iconOnly class="hidden lg:inline-flex" ariaLabel="Zitzmann.dev">
           <img src="/img/branding/logo_dark.svg" alt="Logo" class="w-8 h-8 rounded" />
           <!-- Name for desktop -->
-          <p class="hidden lg:block">Zitzmann<span class="uppercase font-black">.dev</span></p>
-        </a>
+          <p class="hidden lg:block text-base" aria-label="Zitzmann.dev">
+            Zitzmann<span class="uppercase font-black">.dev</span>
+          </p>
+        </NavButton>
 
         <!-- Menu button for mobile devices -->
-        <button class="inline-flex lg:hidden items-center gap-2 py-1 px-2 rounded text-sm">
-          <Icon size={28} name="ph:dots-nine-bold" />
-        </button>
+        <NavButton iconOnly variant="text" class="inline-flex lg:hidden" ariaLabel="Menu">
+          <Icon class="w-7 h-7" name="ph:dots-nine-bold" />
+        </NavButton>
       </div>
 
       <div class="flex items-center justify-center">
         <!-- Desktop nav -->
         <nav class="hidden lg:inline-flex items-center justify-center gap-4">
-          <a class="text-sm font-semibold opacity-80">About me</a>
-          <a class="text-sm font-semibold opacity-80">Skills</a>
-          <a class="text-sm font-semibold opacity-80">Projects</a>
+          <NavButton variant="text" href="/">
+            <span class="text-sm opacity-80 font-semibold">About me</span>
+          </NavButton>
+          <NavButton variant="text" href="/skills">
+            <span class="text-sm opacity-80 font-semibold">Skills</span>
+          </NavButton>
+          <NavButton variant="text" href="/projects">
+            <span class="text-sm opacity-80 font-semibold">Projects</span>
+          </NavButton>
         </nav>
 
         <!-- Logo for mobile -->
-        <a href="/" class="inline-flex lg:hidden gap-2 border">
+        <a href="/" class="inline-flex lg:hidden">
           <img src="/img/branding/logo_dark.svg" alt="Logo" class="w-8 h-8 rounded" />
         </a>
       </div>
 
       <div class="flex items-center justify-end">
         <!-- Contact button for desktop -->
-        <button
-          class="hidden md:inline-flex items-center justify-start gap-1 py-2 px-4 bg-body-on text-body text-xs rounded">
-          Get In Touch
-          <Icon name="ph:arrow-square-out-duotone" class="w-5 h-5" />
-        </button>
-
-        <button class="inline-flex md:hidden items-center justify-start gap-1 py-2 px-4 text-sm rounded">
+        <NavButton variant="contained" class="hidden md:inline-flex">
+          <span class="hidden md:inline" aria-hidden="true">Get In Touch</span>
+          <Icon name="ph:arrow-square-out-duotone" class="w-6 h-6" />
+        </NavButton>
+        <!-- Contact button for mobile -->
+        <NavButton iconOnly variant="text" class="inline-flex md:hidden">
           <Icon name="ph:envelope-duotone" class="w-7 h-7" />
-        </button>
+        </NavButton>
       </div>
     </div>
   </Container>

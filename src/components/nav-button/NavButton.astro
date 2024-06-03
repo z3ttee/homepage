@@ -1,0 +1,40 @@
+---
+interface Props {
+  iconOnly?: boolean;
+  variant?: "contained" | "text";
+  class?: string;
+  href?: string;
+  ariaLabel?: string;
+}
+
+const { iconOnly, variant, href, ariaLabel, class: classes } = Astro.props;
+
+const classList = [
+  `inline-flex items-center justify-start gap-2 text-xs rounded transition-all outline-2 outline-offset-4 outline-transparent focus-visible:outline-outline group-focus-visible:outline-outline`,
+  iconOnly ? "p-2" : "py-2 px-4",
+  variant === "text"
+    ? "text-body-on bg-body-on bg-opacity-0 hover:bg-opacity-10 group-hover:bg-opacity-10 active:bg-opacity-20 group-active:bg-opacity-20 focus-visible:bg-opacity-20 group-focus-visible:bg-opacity-20"
+    : "",
+  variant === "contained"
+    ? "bg-body-on text-body hover:bg-opacity-80 group-hover::bg-opacity-80 active:bg-opacity-70 focus-visible:bg-opacity-70 group-active:bg-opacity-70 group-focus-visible:bg-opacity-70"
+    : "",
+  classes
+];
+---
+
+{
+  href && (
+    <a class="group" class="outline-none" href={href} aria-label={ariaLabel}>
+      <button role="button" tabindex="-1" class:list={classList}>
+        <slot />
+      </button>
+    </a>
+  )
+}
+{
+  !href && (
+    <button aria-label={ariaLabel} role="button" tabindex="0" class:list={classList}>
+      <slot />
+    </button>
+  )
+}
