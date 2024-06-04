@@ -5,7 +5,7 @@ export default {
     extend: {
       colors: {
         body: {
-          DEFAULT: "hsl(50, 72%, 98%)",
+          DEFAULT: "hsl(50, 72%, 97%)",
           on: {
             DEFAULT: "hsl(330, 7%, 10%)",
             dim: "hsl(330, 7%, 5%)"

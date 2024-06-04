@@ -3,7 +3,7 @@ export const languages = {
   de: "Deutsch"
 };
 
-export const defaultLang = "de";
+export const defaultLang = "en";
 
 export const messages: any = {
   en: {
@@ -14,6 +14,11 @@ export const messages: any = {
     "header.nav.about": "About me",
     "header.nav.projects": "Projects",
     "header.nav.skills": "Skills",
+    "footer.nav.name": "Navigation",
+    "footer.nav.usefullinks": "Useful Links",
+    "footer.nav.socials": "Socials",
+    "footer.nav.imprint": "Imprint",
+    "footer.nav.privacy": "Data Privacy",
     "section.about.name": "Cedric Zitzmann",
     "section.about.subtext": "Full-Stack Software Engineer",
     "section.projects.name": "Projects",
@@ -56,6 +61,11 @@ export const messages: any = {
     "header.nav.about": "Über mich",
     "header.nav.projects": "Projekte",
     "header.nav.skills": "Skills",
+    "footer.nav.name": "Navigation",
+    "footer.nav.usefullinks": "Nützliche Links",
+    "footer.nav.socials": "Socials",
+    "footer.nav.imprint": "Impressum",
+    "footer.nav.privacy": "Datenschutzhinweise",
     "section.about.name": "Cedric Zitzmann",
     "section.about.subtext": "Full-Stack Software Engineer",
     "section.projects.name": "Projekte",

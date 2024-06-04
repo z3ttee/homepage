@@ -1,6 +1,9 @@
 ---
+import { Icon } from "astro-icon/components";
+import { translate } from "../../i18n/helpers";
 import Container from "../container/Container.astro";
 import Pattern from "../pattern/Pattern.astro";
+import SocialItem from "../social-item/SocialItem.astro";
 
 const currentYear = new Date().getFullYear();
 ---
@@ -11,16 +14,92 @@ const currentYear = new Date().getFullYear();
   </div>
   <div class="bg-body-on text-body w-full">
     <Container>
-      <div class="grid grid-cols-3 p-window">
-        <div class="flex flex-col gap-window">
-          <img src="/img/branding/logo_light.svg" alt="Logo" class="w-24 h-24" />
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-window py-window">
+        <div class="w-full">
+          <img src="/img/branding/logo_light.svg" alt="Logo" class="w-12 h-12 md:w-16 md:h-16 xl:w-24 xl:h-24" />
+
+          <div class="mt-window">
+            <ul class="flex flex-col gap-1">
+              <li class="text-body text-opacity-80">Cedric Zitzmann</li>
+              <li class="text-body text-opacity-80">
+                <a href="mailto:cedric.zitzmann@gmail.com">cedric.zitzmann@gmail.com</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="relative w-full">
+          <div class="absolute hidden lg:block -left-window top-0 w-1 h-20 rounded-full bg-body"></div>
+
+          <p class="font-semibold text-xl">{translate("footer.nav.usefullinks")}</p>
+          <ul class="flex flex-col gap-3 mt-6">
+            <li>
+              <a
+                class="text-sm font-normal tracking-wide text-body text-opacity-80 hover:text-opacity-100 focus-visible:text-opacity-100 transition-all"
+                href="/lega/imprint">
+                {translate("footer.nav.imprint")}
+              </a>
+            </li>
+            <li>
+              <a
+                class="text-sm font-normal tracking-wide text-body text-opacity-80 hover:text-opacity-100 focus-visible:text-opacity-100 transition-all"
+                href="/lega/data-privacy">
+                {translate("footer.nav.privacy")}
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="relative w-full">
+          <div class="hidden lg:block absolute -left-window top-0 w-1 h-20 rounded-full bg-body"></div>
+
+          <p class="font-semibold text-xl">{translate("footer.nav.name")}</p>
+          <ul class="flex flex-col gap-3 mt-6">
+            <li>
+              <a
+                class="text-sm font-normal tracking-wide text-body text-opacity-80 hover:text-opacity-100 focus-visible:text-opacity-100 transition-all"
+                href="/">
+                {translate("header.nav.about")}
+              </a>
+            </li>
+            <li>
+              <a
+                class="text-sm font-normal tracking-wide text-body text-opacity-80 hover:text-opacity-100 focus-visible:text-opacity-100 transition-all"
+                href="/projects">
+                {translate("header.nav.projects")}
+              </a>
+            </li>
+            <li>
+              <a
+                class="text-sm font-normal tracking-wide text-body text-opacity-80 hover:text-opacity-100 focus-visible:text-opacity-100 transition-all"
+                href="/skills">
+                {translate("header.nav.skills")}
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="relative w-full">
+          <div class="hidden xl:block absolute -left-window top-0 w-1 h-20 rounded-full bg-body"></div>
+
+          <p class="font-semibold text-xl">{translate("footer.nav.socials")}</p>
+          <ul class="flex flex-col gap-3 mt-6">
+            <SocialItem href="https://www.linkedin.com/in/cedric-zitzmann">
+              <Icon class="w-7 h-7" name="ph:linkedin-logo" />
+              <span class="text-sm">{translate("socials.linkedin.label")}</span>
+            </SocialItem>
+            <SocialItem href="https://github.com/z3ttee">
+              <Icon class="w-7 h-7" name="ph:github-logo" />
+              <span class="text-sm">{translate("socials.github.label")}</span>
+            </SocialItem>
+          </ul>
         </div>
       </div>
     </Container>
 
     <div class="w-full bg-body-on-dim">
       <Container>
-        <p class="text-center text-sm text-body p-window-sm">
+        <p class="text-center text-sm text-body py-window-sm">
           &copy; {currentYear} Cedric Zitzmann
         </p>
       </Container>
