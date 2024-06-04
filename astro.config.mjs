@@ -6,5 +6,6 @@ import pageInsight from "astro-page-insight";
 
 // https://astro.build/config
 export default defineConfig({
+  output: "server",
   integrations: [tailwind(), icon(), pageInsight()]
 });
