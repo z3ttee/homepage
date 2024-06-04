@@ -1,0 +1,32 @@
+---
+import type { Project } from "../../types/project";
+import ProjectRow from "../project-row/ProjectRow.astro";
+import Section from "./Section.astro";
+
+const projects: Project[] = [
+  {
+    name: "Webradio",
+    description:
+      "The basic functionality included an interface to manage different channels and the webplayer for users.",
+    technologies: ["Angular", "NodeJS", "MySQL", "WebSockets"]
+  },
+  {
+    name: "Music Streaming Service",
+    description:
+      "This project was a spotify clone with a built-in file indexing algorithm to manage a user's private music repository",
+    technologies: ["Angular", "NodeJS", "MySQL", "WebSockets", "Meilisearch", "Message Queues"]
+  }
+];
+---
+
+<Section name="Projects" subtext="See what I have been working on in the past">
+  <div class="grid grid-cols-1 2xl:grid-cols-2 w-full gap-window">
+    {
+      projects.map((project) => (
+        <div class="">
+          <ProjectRow project={project} />
+        </div>
+      ))
+    }
+  </div>
+</Section>

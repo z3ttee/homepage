@@ -1,0 +1,23 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  name: string;
+  description: string;
+  icon?: string;
+}
+
+const { name, description, icon } = Astro.props;
+---
+
+<div class="rounded-lg border p-window-sm lg:p-window">
+  {
+    icon && (
+      <span class="block bg-body-container text-body-container-on w-14 h-14 rounded-full p-3.5 mb-5">
+        <Icon name={icon} class="w-full h-full" />
+      </span>
+    )
+  }
+  <h6 class="text-2xl font-semibold">{name}</h6>
+  <p class="text-justify text-sm mt-8">{description}</p>
+</div>

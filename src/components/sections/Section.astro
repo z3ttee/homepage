@@ -1,0 +1,44 @@
+---
+import Container from "../container/Container.astro";
+
+interface Props {
+  name?: string;
+  subtext?: string;
+  withContainer?: boolean;
+}
+
+const { name, subtext, withContainer } = Astro.props;
+
+const showWithContainer = withContainer ?? true;
+const showWithHeader = name || subtext;
+---
+
+<div class="flex flex-col gap-12 lg:gap-24 py-24 w-full">
+  {
+    showWithHeader && (
+      <Container>
+        <div class="w-full">
+          {name && <h1 class="text-center text-5xl lg:text-7xl font-black">{name}</h1>}
+          {subtext && <p class="text-center text-base lg:text-xl mt-2">{subtext}</p>}
+        </div>
+      </Container>
+    )
+  }
+
+  {
+    showWithContainer && (
+      <Container>
+        <div class="w-full">
+          <slot />
+        </div>
+      </Container>
+    )
+  }
+  {
+    !showWithContainer && (
+      <div class="w-full">
+        <slot />
+      </div>
+    )
+  }
+</div>

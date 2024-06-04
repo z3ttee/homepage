@@ -1,0 +1,29 @@
+---
+import Container from "../container/Container.astro";
+import Pattern from "../pattern/Pattern.astro";
+
+const currentYear = new Date().getFullYear();
+---
+
+<div class="relative flex flex-col w-full pt-0">
+  <div class="absolute -z-[1] transform-gpu -translate-y-1/2 top-0 left-0 h-full w-full">
+    <Pattern />
+  </div>
+  <div class="bg-body-on text-body w-full">
+    <Container>
+      <div class="grid grid-cols-3 p-window">
+        <div class="flex flex-col gap-window">
+          <img src="/img/branding/logo_light.svg" alt="Logo" class="w-24 h-24" />
+        </div>
+      </div>
+    </Container>
+
+    <div class="w-full bg-body-on-dim">
+      <Container>
+        <p class="text-center text-sm text-body p-window-sm">
+          &copy; {currentYear} Cedric Zitzmann
+        </p>
+      </Container>
+    </div>
+  </div>
+</div>

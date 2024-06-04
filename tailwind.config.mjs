@@ -4,8 +4,17 @@ export default {
   theme: {
     extend: {
       colors: {
-        body: "hsl(50, 72%, 97%)",
-        "body-on": "hsl(330, 7%, 5%)",
+        body: {
+          DEFAULT: "hsl(50, 72%, 98%)",
+          on: {
+            DEFAULT: "hsl(330, 7%, 10%)",
+            dim: "hsl(330, 7%, 5%)"
+          },
+          container: {
+            DEFAULT: "hsl(50, 72%, 85%)",
+            on: "hsl(50, 72%, 20%)"
+          }
+        },
         outline: "hsl(330, 7%, 40%)"
       },
       spacing: {

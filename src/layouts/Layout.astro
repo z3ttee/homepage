@@ -1,12 +1,15 @@
 ---
 import Header from "../components/header/Header.astro";
 import Container from "../components/container/Container.astro";
+import Footer from "../components/footer/Footer.astro";
 
 interface Props {
   title: string;
 }
 
 const { title } = Astro.props;
+
+const countryCode = Astro.request.headers.get("X-Vercel-IP-Country");
 ---
 
 <!doctype html>
@@ -22,10 +25,10 @@ const { title } = Astro.props;
   </head>
   <body class="relative h-full bg-body lg:overflow-x-hidden">
     <Header />
-    <Container>
-      <div class="w-full px-window">
-        <slot />
-      </div>
-    </Container>
+    <div class="w-full">
+      <slot />
+    </div>
+    <Footer />
+    {countryCode}
   </body>
 </html>

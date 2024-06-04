@@ -1,0 +1,44 @@
+---
+import type { Skill } from "../../types/skill";
+import SkillCard from "../skill-card/SkillCard.astro";
+import Section from "./Section.astro";
+
+const skills: Skill[] = [
+  {
+    icon: "ph:factory-duotone",
+    name: "Cross Industry Experience",
+    description:
+      "Through my work at one of the biggest IT Consulting firm, I gained insight into different industries. Thanks to this I developed high flexibility in my work and was able to apply my knowledge in different use-cases"
+  },
+  {
+    icon: "ph:code-duotone",
+    name: "Full-Stack Development",
+    description:
+      "I am experienced in building custom frontend applications as well as backend services. This includes frameworks like Angular and React for frontend apps and NodeJS or Spring Boot for backend applications."
+  },
+  {
+    icon: "ph:paint-brush-duotone",
+    name: "UI/UX",
+    description:
+      "Thanks to my past projects I have a good understanding of UI/UX principles. I am able to design and implement user-friendly interfaces that are easy to use. In the past I used tools like Adobe XD and Figma for prototyping."
+  },
+  {
+    icon: "ph:angle-duotone",
+    name: "Architecture",
+    description:
+      "Deep understanding of software architecture principles is a high priority for me. I am able to design and implement scalable and maintainable software solutions. In the past I worked on microservices and monolithic applications as well as serverless functions."
+  },
+  {
+    icon: "ph:hand-heart-duotone",
+    name: "Passion for the new",
+    description:
+      "Always looking for a new challenge describes this skill the best. I am always eager to learn new technologies and tools. But this does not mean I jump on every hype train. I am able to evaluate new technologies and check their specific use-cases."
+  }
+];
+---
+
+<Section name="Skills" subtext="What am I good at?">
+  <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-window-sm lg:gap-window">
+    {skills.map((skill) => <SkillCard icon={skill.icon} name={skill.name} description={skill.description} />)}
+  </div>
+</Section>

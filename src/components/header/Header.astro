@@ -2,11 +2,13 @@
 import { Icon } from "astro-icon/components";
 import Container from "../container/Container.astro";
 import NavButton from "../nav-button/NavButton.astro";
+
+let hasScrolled = false;
 ---
 
-<div class="relative lg:fixed top-0 left-0 right-0 bg-body z-50">
+<div id="page-header" class="relative lg:fixed top-0 left-0 right-0 bg-body z-50 transition-all">
   <Container>
-    <div class="grid grid-cols-3 items-center justify-start w-full h-14 px-window py-window-sm">
+    <div class="grid grid-cols-3 items-center justify-start w-full py-4">
       <div class="block">
         <!-- Logo for desktop -->
         <NavButton variant="text" href="/" iconOnly class="hidden lg:inline-flex" ariaLabel="Zitzmann.dev">
@@ -29,11 +31,11 @@ import NavButton from "../nav-button/NavButton.astro";
           <NavButton variant="text" href="/">
             <span class="text-sm opacity-80 font-semibold">About me</span>
           </NavButton>
-          <NavButton variant="text" href="/skills">
-            <span class="text-sm opacity-80 font-semibold">Skills</span>
-          </NavButton>
           <NavButton variant="text" href="/projects">
             <span class="text-sm opacity-80 font-semibold">Projects</span>
+          </NavButton>
+          <NavButton variant="text" href="/skills">
+            <span class="text-sm opacity-80 font-semibold">Skills</span>
           </NavButton>
         </nav>
 
@@ -57,3 +59,11 @@ import NavButton from "../nav-button/NavButton.astro";
     </div>
   </Container>
 </div>
+
+<script define:vars={{ hasScrolled }}>
+  function handleScroll() {
+    document.getElementById("page-header").classList.toggle("shadow", window.scrollY > 10);
+  }
+
+  window.addEventListener("scroll", handleScroll);
+</script>
