@@ -2,19 +2,20 @@
 import Header from "../components/header/Header.astro";
 import Container from "../components/container/Container.astro";
 import Footer from "../components/footer/Footer.astro";
+import { setLocale, $locale } from "../store";
+
+// Set locale
+setLocale(Astro.request.headers.get("X-Vercel-IP-Country"));
 
 interface Props {
   title: string;
 }
 
 const { title } = Astro.props;
-
-const countryCode = Astro.request.headers.get("X-Vercel-IP-Country");
-console.log(Astro.request.headers);
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={$locale.get().toLowerCase()}>
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
@@ -30,6 +31,5 @@ console.log(Astro.request.headers);
       <slot />
     </div>
     <Footer />
-    {countryCode}
   </body>
 </html>
