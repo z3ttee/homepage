@@ -2,6 +2,7 @@
 import { Icon } from "astro-icon/components";
 import Container from "../container/Container.astro";
 import NavButton from "../nav-button/NavButton.astro";
+import { translate } from "../../i18n/helpers";
 
 let hasScrolled = false;
 ---
@@ -29,13 +30,13 @@ let hasScrolled = false;
         <!-- Desktop nav -->
         <nav class="hidden lg:inline-flex items-center justify-center gap-4">
           <NavButton variant="text" href="/">
-            <span class="text-sm opacity-80 font-semibold">About me</span>
+            <span class="text-sm opacity-80 font-semibold">{translate("header.nav.about")}</span>
           </NavButton>
           <NavButton variant="text" href="/projects">
-            <span class="text-sm opacity-80 font-semibold">Projects</span>
+            <span class="text-sm opacity-80 font-semibold">{translate("header.nav.projects")}</span>
           </NavButton>
           <NavButton variant="text" href="/skills">
-            <span class="text-sm opacity-80 font-semibold">Skills</span>
+            <span class="text-sm opacity-80 font-semibold">{translate("header.nav.skills")}</span>
           </NavButton>
         </nav>
 
@@ -48,7 +49,7 @@ let hasScrolled = false;
       <div class="flex items-center justify-end">
         <!-- Contact button for desktop -->
         <NavButton variant="contained" class="hidden md:inline-flex">
-          <span class="hidden md:inline" aria-hidden="true">Get In Touch</span>
+          <span class="hidden md:inline" aria-hidden="true">{translate("header.nav.contact")}</span>
           <Icon name="ph:arrow-square-out-duotone" class="w-6 h-6" />
         </NavButton>
         <!-- Contact button for mobile -->

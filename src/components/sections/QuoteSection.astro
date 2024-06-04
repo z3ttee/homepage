@@ -1,4 +1,5 @@
 ---
+import { translate } from "../../i18n/helpers";
 import Chip from "../chip/Chip.astro";
 import Section from "./Section.astro";
 ---
@@ -6,15 +7,15 @@ import Section from "./Section.astro";
 <Section>
   <div class="flex flex-col items-center justify-center">
     <div>
-      <Chip>Favourite Quote</Chip>
+      <Chip>{translate("chip.quote.label")}</Chip>
     </div>
 
     <h1 class="relative text-center text-3xl font-semibold mt-6">
-      &#8220;Everything in this world is magic, except to the magician&#8221;
+      &#8220;{translate("chip.quote.content")}&#8221;
     </h1>
 
     <p class="text-center text-base mt-2 text-body-on text-opacity-80">
-      Dr. Robert Ford, Westworld, Westworld Season 1: Chestnut
+      {translate("chip.quote.source")}
     </p>
   </div>
 </Section>

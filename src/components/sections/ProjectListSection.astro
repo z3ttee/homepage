@@ -1,31 +1,29 @@
 ---
+import { translate } from "../../i18n/helpers";
 import type { Project } from "../../types/project";
 import ProjectRow from "../project-row/ProjectRow.astro";
 import Section from "./Section.astro";
 
 const projects: Project[] = [
   {
-    name: "Webradio",
-    description:
-      "The basic functionality included an interface to manage different channels and the webplayer for users.",
+    name: translate("section.projects.radio.name"),
+    description: translate("section.projects.radio.description"),
     technologies: ["Angular", "NodeJS", "MySQL", "WebSockets"]
   },
   {
-    name: "Music Streaming Service",
-    description:
-      "This project was a spotify clone with a built-in file indexing algorithm to manage a user's private music repository",
+    name: translate("section.projects.mss.name"),
+    description: translate("section.projects.mss.description"),
     technologies: ["Angular", "NodeJS", "MySQL", "WebSockets", "Meilisearch", "Message Queues"]
   },
   {
-    name: "Index Cards App",
-    description:
-      "A simple app to manage index cards for studying purposes. Users can manage modules and add cards for each. It also includes a quiz game mode where users get asked the questions and can evaluate their answers",
+    name: translate("section.projects.ica.name"),
+    description: translate("section.projects.ica.description"),
     technologies: ["Flutter", "Android Studio", "Material Design"]
   }
 ];
 ---
 
-<Section name="Projects" subtext="See what I have been working on in the past">
+<Section name={translate("section.projects.name")} subtext={translate("section.projects.subtext")}>
   <div class="grid grid-cols-1 2xl:grid-cols-2 w-full gap-window">
     {
       projects.map((project) => (
