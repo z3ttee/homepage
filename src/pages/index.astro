@@ -12,8 +12,8 @@ import { translate } from "../i18n/helpers";
 
 <Layout title={translate("page.title")}>
   <Container>
-    <div class="relative flex flex-col items-center justify-center lg:h-[calc(100vh-5rem)] w-full py-48">
-      <div class="flex flex-col-reverse lg:gap-0 lg:grid grid-cols-[2fr,1fr] w-full h-full items-center">
+    <div class="relative flex flex-col items-center justify-center h-[calc(100vh-5rem)] w-full pb-24">
+      <div class="flex flex-col-reverse items-center justify-center lg:gap-0 lg:grid grid-cols-[2fr,1fr] w-full h-full">
         <!-- Short profile -->
         <div class="w-full">
           <h1 class="text-center text-4xl md:text-6xl lg:text-left lg:text-7xl font-black">
@@ -33,12 +33,16 @@ import { translate } from "../i18n/helpers";
           </ul>
         </div>
         <!-- Picture -->
-        <div class="w-96 h-96 lg:h-[50%] lg:w-full">
+        <div class="relative w-96 lg:h-[60%] lg:w-full">
           <Pattern />
+
+          <div class="absolute top-0 left-1/2 transform-gpu -translate-x-1/2 translate-y-1/2">
+            <img src="/img/profile/pb.webp" alt="Profile picture" class="w-full rounded-full shadow-2xl" />
+          </div>
         </div>
       </div>
 
-      <div class="absolute bottom-0 left-1/2 transform-gpu -translate-x-1/2">
+      <div class="absolute bottom-0 left-1/2 transform-gpu -translate-x-1/2 pb-window-sm lg:pb-window">
         <button
           id="scroll-to-projects-btn"
           onclick=""
