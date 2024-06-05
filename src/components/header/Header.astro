@@ -3,13 +3,14 @@ import { Icon } from "astro-icon/components";
 import Container from "../container/Container.astro";
 import NavButton from "../nav-button/NavButton.astro";
 import { translate } from "../../i18n/helpers";
+import { CONTACT_EMAIL } from "../../constants";
 
-let hasScrolled = false;
+const email = CONTACT_EMAIL;
 ---
 
-<div id="page-header" class="relative lg:fixed top-0 left-0 right-0 bg-body z-50 transition-all">
+<div id="page-header" class="flex items-center sticky top-0 left-0 right-0 bg-body z-50 transition-all">
   <Container>
-    <div class="grid grid-cols-3 items-center justify-start w-full py-4">
+    <div class="grid grid-cols-3 items-center justify-start w-full h-20">
       <div class="block">
         <!-- Logo for desktop -->
         <NavButton variant="text" href="/" iconOnly class="hidden lg:inline-flex" ariaLabel="Zitzmann.dev">
@@ -48,12 +49,12 @@ let hasScrolled = false;
 
       <div class="flex items-center justify-end">
         <!-- Contact button for desktop -->
-        <NavButton variant="contained" class="hidden md:inline-flex">
+        <NavButton variant="contained" class="hidden md:inline-flex" href={`mailto:${email}`}>
           <span class="hidden md:inline" aria-hidden="true">{translate("header.nav.contact")}</span>
           <Icon name="ph:arrow-square-out-duotone" class="w-6 h-6" />
         </NavButton>
         <!-- Contact button for mobile -->
-        <NavButton iconOnly variant="text" class="inline-flex md:hidden">
+        <NavButton iconOnly variant="text" class="inline-flex md:hidden" href={`mailto:${email}`}>
           <Icon name="ph:envelope-duotone" class="w-7 h-7" />
         </NavButton>
       </div>
@@ -61,9 +62,9 @@ let hasScrolled = false;
   </Container>
 </div>
 
-<script define:vars={{ hasScrolled }}>
+<script>
   function handleScroll() {
-    document.getElementById("page-header").classList.toggle("shadow", window.scrollY > 10);
+    document.getElementById("page-header")?.classList?.toggle("shadow", window.scrollY > 10);
   }
 
   window.addEventListener("scroll", handleScroll);

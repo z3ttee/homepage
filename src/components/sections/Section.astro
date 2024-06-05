@@ -5,15 +5,17 @@ interface Props {
   name?: string;
   subtext?: string;
   withContainer?: boolean;
+  anchor?: string;
 }
 
-const { name, subtext, withContainer } = Astro.props;
+const { name, subtext, withContainer, anchor } = Astro.props;
 
 const showWithContainer = withContainer ?? true;
 const showWithHeader = name || subtext;
+const id = anchor ?? "";
 ---
 
-<div class="flex flex-col gap-12 lg:gap-24 py-24 w-full">
+<div id={id} class="flex flex-col gap-12 lg:gap-24 py-24 w-full">
   {
     showWithHeader && (
       <Container>

@@ -4,8 +4,11 @@ import { translate } from "../../i18n/helpers";
 import Container from "../container/Container.astro";
 import Pattern from "../pattern/Pattern.astro";
 import SocialItem from "../social-item/SocialItem.astro";
+import { CONTACT_EMAIL } from "../../constants";
 
 const currentYear = new Date().getFullYear();
+
+const EMAIL = CONTACT_EMAIL;
 ---
 
 <div class="relative flex flex-col w-full pt-0">
@@ -22,7 +25,7 @@ const currentYear = new Date().getFullYear();
             <ul class="flex flex-col gap-1">
               <li class="text-body text-opacity-80">Cedric Zitzmann</li>
               <li class="text-body text-opacity-80">
-                <a href="mailto:cedric.zitzmann@gmail.com">cedric.zitzmann@gmail.com</a>
+                <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
               </li>
             </ul>
           </div>
