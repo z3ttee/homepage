@@ -1,0 +1,33 @@
+---
+import type { Project } from "../../types/project";
+import Chip from "../chip/Chip.astro";
+
+interface Props {
+  project: Project;
+}
+
+const {
+  project: { name, description, technologies, coverImgUrl }
+} = Astro.props;
+---
+
+<div tabindex="0" class="group w-full h-full cursor-pointer">
+  <div
+    class="h-full grid grid-cols-[auto,1fr] lg:grid-cols-[280px,1fr] lg:grid-rows-[200px] items-start lg:items-center rounded-lg outline-none transition-all bg-body-container border-2 border-body-container border-opacity-0 bg-opacity-0 group-hover:bg-opacity-10 group-hover:border-opacity-100 group-focus-visible:bg-opacity-10 group-focus-visible:border-opacity-100 p-2">
+    <div
+      class="w-32 h-24 lg:w-full lg:h-full rounded-lg bg-body-on bg-opacity-10 bg-no-repeat bg-cover"
+      style={`background-image: url(${coverImgUrl});`}>
+    </div>
+    <div class="flex-grow px-window-sm lg:p-window-sm min-w-0 overflow-hidden">
+      <h6 class="text-2xl font-bold line-clamp-2">{name}</h6>
+
+      <p class="text-sm text-justify mt-2 text-body-on text-opacity-80 line-clamp-3">
+        {description}
+      </p>
+
+      <div class="flex items-center justify-start flex-wrap gap-2 mt-6">
+        {technologies.map((tech) => <Chip>{tech}</Chip>)}
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,7 +1,7 @@
 ---
 import { translate } from "../../i18n/helpers";
 import type { Project } from "../../types/project";
-import ProjectRow from "../project-row/ProjectRow.astro";
+import ProjectCard from "../cards/ProjectCard.astro";
 import Section from "./Section.astro";
 
 const projects: Project[] = [
@@ -13,7 +13,8 @@ const projects: Project[] = [
   {
     name: translate("section.projects.mss.name"),
     description: translate("section.projects.mss.description"),
-    technologies: ["Angular", "NodeJS", "MySQL", "WebSockets", "Meilisearch", "Message Queues"]
+    technologies: ["Angular", "NodeJS", "MySQL", "WebSockets", "Meilisearch", "Message Queues"],
+    coverImgUrl: "/img/projects/soundcore.png"
   },
   {
     name: translate("section.projects.ica.name"),
@@ -28,7 +29,7 @@ const projects: Project[] = [
     {
       projects.map((project) => (
         <div class="">
-          <ProjectRow project={project} />
+          <ProjectCard project={project} />
         </div>
       ))
     }
