@@ -59,7 +59,7 @@ export const messages: any = {
     "socials.linkedin.label": "/cedric-zitzmann",
     "socials.github.label": "/z3ttee",
     "btn.scrolltoprojects": "Projekte ansehen",
-    "header.nav.contact": "Kontaktier' mich",
+    "header.nav.contact": "Kontaktieren",
     "header.nav.about": "Über mich",
     "header.nav.projects": "Projekte",
     "header.nav.skills": "Skills",
