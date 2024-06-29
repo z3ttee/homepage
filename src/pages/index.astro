@@ -8,55 +8,11 @@ import Layout from "../layouts/Layout.astro";
 import { Icon } from "astro-icon/components";
 import Container from "../components/container/Container.astro";
 import { translate } from "../i18n/helpers";
+import LandingSection from "../components/sections/LandingSection.astro";
 ---
 
 <Layout title={translate("page.title")}>
-  <Container>
-    <div class="relative flex flex-col items-center justify-center h-[calc(100vh-5rem)] w-full pb-24">
-      <div class="flex flex-col-reverse items-center justify-center lg:gap-0 lg:grid grid-cols-[2fr,1fr] w-full h-full">
-        <!-- Short profile -->
-        <div class="w-full">
-          <h1 class="text-center text-4xl md:text-6xl lg:text-left lg:text-7xl font-black">
-            {translate("section.about.name")}
-          </h1>
-          <p class="text-center text-base md:text-lg lg:text-left mt-2 lg:px-2">{translate("section.about.subtext")}</p>
-
-          <ul class="flex items-center justify-center lg:justify-start mt-10 lg:mt-20 gap-6 px-1 opacity-80">
-            <SocialItem href="https://www.linkedin.com/in/cedric-zitzmann">
-              <Icon class="w-7 h-7" name="ph:linkedin-logo" />
-              <span class="text-sm hidden sm:inline">{translate("socials.linkedin.label")}</span>
-            </SocialItem>
-            <SocialItem href="https://github.com/z3ttee">
-              <Icon class="w-7 h-7" name="ph:github-logo" />
-              <span class="text-sm hidden sm:inline">{translate("socials.github.label")}</span>
-            </SocialItem>
-          </ul>
-        </div>
-        <!-- Picture -->
-        <div class="relative w-96 lg:h-[60%] lg:w-full">
-          <Pattern />
-
-          <div class="absolute top-0 left-1/2 transform-gpu -translate-x-1/2 translate-y-1/2">
-            <img src="/img/profile/pb.webp" alt="Profile picture" class="w-full rounded-full shadow-2xl" />
-          </div>
-        </div>
-      </div>
-
-      <div class="absolute bottom-0 left-1/2 transform-gpu -translate-x-1/2 pb-window-sm lg:pb-window">
-        <button
-          id="scroll-to-projects-btn"
-          onclick=""
-          class="group inline-flex flex-col items-center justify-center gap-2 py-2 px-6">
-          <span class="text-xs text-body-on text-opacity-70">{translate("btn.scrolltoprojects")}</span>
-          <Icon
-            name="ph:caret-double-down-duotone"
-            class="w-12 h-12 group-hover:scale-110 transition-all will-change-auto"
-          />
-        </button>
-      </div>
-    </div>
-  </Container>
-
+  <LandingSection />
   <ProjectListSection />
   <SkillsListSection />
   <QuoteSection />

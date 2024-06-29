@@ -33,7 +33,7 @@ const skills: Skill[] = [
 ];
 ---
 
-<Section name={translate("section.skills.name")} subtext={translate("section.skills.subtext")}>
+<Section anchor="skills" name={translate("section.skills.name")} subtext={translate("section.skills.subtext")}>
   <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-window-sm lg:gap-window">
     {skills.map((skill) => <SkillCard icon={skill.icon} name={skill.name} description={skill.description} />)}
   </div>
